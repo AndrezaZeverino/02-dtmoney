@@ -21,9 +21,11 @@ Arquivo index.tsx: removo importação do css e do ReportWebVitals. Tiro o comen
 Arquivo App.tsx: removo a importação do react e do svg. Tiro todo o conteúdo de dentro, deixo apenas a div className=”App”.
 Tiro export default, coloco o export antes da function.
 
-Uso export antes da função para que quando alguém for importar o componente, não consiga mudar o nome dele na importação.
+Uso export antes da função para que quando alguém for importar o componente, não consiga mudar o nome dele na 
+importação.
 
-Toda configuração do webpack, babel, etc não fica visível no projeto. Ela fica dentro de um pacote chamado react-scripts.
+Toda configuração do webpack, babel, etc não fica visível no projeto. Ela fica dentro de um pacote chamado 
+react-scripts.
 
 No arquivo package.json: vou nas dependências, recorto todos os testings, types até typeScript e colo abaixo como dependên
 cia de desenvolvimento (“devDependencies”).  
@@ -41,11 +43,15 @@ público do projeto.
 
 Instalando Styled Components
 
-Comando: yarn add styled-components.
+Comando: yarn add styled-components
 
 Faço a importação no arquivo App. Instalo o pacote adicional que o VS Code me sugere. 
 yarn add @types/styled-components –D
-Vou criar um componente para fazer a parte de estilização da minha página. Coloco a tag com o nome do componente onde quero. 
+
+Baixo essa extensão: vscode-styled-components para que o vs entenda o que é CSS. 
+
+Vou criar um componente para fazer a parte de estilização da minha página. Coloco a tag com o nome do componente onde quero.
+
 import styled from 'styled-components'
 
 const Title = styled.h1 `
@@ -68,6 +74,11 @@ Lembrar de incluir o favicon no index.html.
     <link rel="shortcut icon" href="favicon.png" type="image/png">
 
 Crio uma pasta chamada styles dentro do src, crio um arquivo chamado global.ts.
+
 Estilos globais: é o que toda a aplicação usa.
+
+Criei uma variável para a cor de fundo da página. 
+
+Depois das estilizações no arquivo dos styles, faço a importação dele no arquivo App. 
 
 
