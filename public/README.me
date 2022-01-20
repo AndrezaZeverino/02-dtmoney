@@ -15,3 +15,15 @@ Pasta public: deleto todos os arquivos, menos o index.html.
 Pasta src: deixo o arquivo App.tsx, index.tsx e react-app-env.d.ts. 
 
 react-app-env.d.ts: esse arquivo traz algumas tipagens do typescript para o projeto. 
+
+Arquivo index.tsx: removo importação do css e do ReportWebVitals. Tiro o comentário e a escrita abaixo dele. 
+
+Arquivo App.tsx: removo a importação do react e do svg. Tiro todo o conteúdo de dentro, deixo apenas a div className=”App”.
+Tiro export default, coloco o export antes da function.
+
+Uso export antes da função para que quando alguém for importar o componente, não consiga mudar o nome dele na importação. 
+
+Toda configuração do webpack, babel, etc não fica visível no projeto. Ela fica dentro de um pacote chamado react-scripts.
+No arquivo package.json: vou nas dependências, recorto todos os testings, types até typeScript e colo abaixo como dependên
+cia de desenvolvimento (“devDependencies”).  
+
