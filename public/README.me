@@ -16,18 +16,58 @@ Pasta src: deixo o arquivo App.tsx, index.tsx e react-app-env.d.ts.
 
 react-app-env.d.ts: esse arquivo traz algumas tipagens do typescript para o projeto. 
 
-<<<<<<< HEAD
 Arquivo index.tsx: removo importação do css e do ReportWebVitals. Tiro o comentário e a escrita abaixo dele. 
 
 Arquivo App.tsx: removo a importação do react e do svg. Tiro todo o conteúdo de dentro, deixo apenas a div className=”App”.
 Tiro export default, coloco o export antes da function.
 
-Uso export antes da função para que quando alguém for importar o componente, não consiga mudar o nome dele na importação. 
+Uso export antes da função para que quando alguém for importar o componente, não consiga mudar o nome dele na importação.
 
 Toda configuração do webpack, babel, etc não fica visível no projeto. Ela fica dentro de um pacote chamado react-scripts.
+
 No arquivo package.json: vou nas dependências, recorto todos os testings, types até typeScript e colo abaixo como dependên
 cia de desenvolvimento (“devDependencies”).  
-=======
-teste
->>>>>>> 68073184cbe5c95c4646402824e60c75dc665451
+
+Exportando assets do Figma
+
+Exporto em formato svg as “coisas” do Figma, esse formato é considerado o melhor para Web. Só não exporto assim se for uma
+ foto, por exemplo.
+ 
+Vou colocando os downloads dentro da pasta Src > assets (crio uma pasta chamada assets). 
+
+Favicon sempre salvo como png. Este arquivo vai dentro da pasta onde consta o índice, pois ele é considerado um arquivo 
+público do projeto. 
+
+
+Instalando Styled Components
+
+Comando: yarn add styled-components.
+
+Faço a importação no arquivo App. Instalo o pacote adicional que o VS Code me sugere. 
+yarn add @types/styled-components –D
+Vou criar um componente para fazer a parte de estilização da minha página. Coloco a tag com o nome do componente onde quero. 
+import styled from 'styled-components'
+
+const Title = styled.h1 `
+    color: #8257e6;
+`
+export function App() {
+  return (
+    <div className="App">
+        <Title>Hello World</Title>
+    </div>
+  );
+}
+
+Detalhe que aqui se criar a estilização dentro do componente, essa não será usado nos demais componentes. 
+O código acaba ficando mais organizado. 
+
+Criando estilos globais 
+
+Lembrar de incluir o favicon no index.html. 
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+
+Crio uma pasta chamada styles dentro do src, crio um arquivo chamado global.ts.
+Estilos globais: é o que toda a aplicação usa.
+
 
