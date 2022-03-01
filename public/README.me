@@ -176,3 +176,42 @@ ao redor de tudo. Se quiser que apenas um componente acesse as informações, co
 Quando tem duas chaves, é porque tem uma indicando que ali o código é js e outra indicando que é uma lista de objetos
 
 await: aguarda determinada função dar certo para depois continuar executando a tela 
+
+para fechar o Modal tenho que incluir o método onRequestClose(). Caso queira que ele execute apenas após criar a transação,
+preciso colocar um await em frente à função que vai executar antes. Lá no contexto preciso por a função de createTransaction como 
+assincrona (async) e coloco um await no api.post
+
+toda função assincrona por padrão do JS retorna uma promisse por isso coloco ao redor do void do contexto 
+Promise<void>
+
+No arquivo index do NewTransactionModal coloco um async também
+
+no arquivo index do newTransactionModal posso setar os campos do modal, ou seja, deixa-los em branco assim
+que a pessoa salvar a transação 
+
+        setTitle('');
+        setAmount(0);
+        setCategory('deposit');
+        setType('');
+
+para ter acesso à transação que foi incluída vou no contexto, crio uma consta chamada response (antes do await api.post)
+crio abaixo uma nova const, desse modo: const { transaction } = response.data;
+
+para adicionar o estado em um vetor, coloco desse modo: setTransactions([
+            ...transactions,
+            transaction,
+        ]);
+
+HOOKS 
+
+todo hook começa com a palavra use, exemplo: useTransactions.tsx
+
+coloco isso no hooks: export function useTransactions(){
+    const context = useContext(TransactionsContext);
+
+    return context;
+}
+
+depois disso tiro a exportação do context 
+
+
